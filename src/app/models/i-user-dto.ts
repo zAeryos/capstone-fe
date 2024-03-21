@@ -1,6 +1,5 @@
 export interface IUserDTO {
 
-
 }
 
 export interface UserRegister {
@@ -16,4 +15,8 @@ export interface UserRegister {
 export interface UserLogin {
   username: string
   password: string
+}
+
+export interface UserAvatar {
+  avatar: string
 }
