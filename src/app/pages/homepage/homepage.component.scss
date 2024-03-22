@@ -116,3 +116,30 @@
   margin-right: -50px;
   border: 1px solid var(--bs-primary);
 }
+
+/*** Service ***/
+
+.service .service-content-inner {
+  transition: 0.5s;
+}
+
+.service-mw {
+  max-width: 900px;
+}
+
+.service .service-content-inner:hover {
+  position: relative;
+  background: var(--bs-primary)!important;
+}
+
+.service .service-content-inner .service-content h5,
+.service .service-content-inner .service-content p,
+.service .service-content-inner .service-icon i {
+  transition: 0.5s;
+}
+
+.service .service-content-inner:hover .service-content h5,
+.service .service-content-inner:hover .service-content p,
+.service .service-content-inner:hover .service-icon i {
+  color: var(--bs-white)!important;
+}
