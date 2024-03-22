@@ -1,0 +1,12 @@
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.7s ease-out, visibility 0s linear 0.7s;
+  z-index: 9999;
+}
+
+#spinner.show {
+  transition: opacity 0.7s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
