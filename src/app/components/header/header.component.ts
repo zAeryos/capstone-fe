@@ -9,6 +9,7 @@ export class HeaderComponent {
 
   isSticky: boolean = false;
 
+
   constructor(private elementRef: ElementRef) {}
 
   @HostListener('window:scroll', [])

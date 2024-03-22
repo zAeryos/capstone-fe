@@ -27,10 +27,10 @@
 </div>
 
 <div class="container-fluid position-relative p-0">
-  <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" [ngClass]="{ 'sticky-top': isSticky }">
+  <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" [ngClass]="{'sticky-top': isSticky }">
       <a routerLink="homepage" class="navbar-brand p-0">
-          <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Travela</h1>
-          <!-- <img src="img/logo.png" alt="Logo"> -->
+          <img *ngIf="!isSticky" src="../../../assets/images/logo/TIMELESS-TRAVEL-LOGO-WHITE.png" alt="Logo-white">
+          <img *ngIf="isSticky"  src="../../../assets/images/logo/TIMELESS_TRAVELS_LOGO_2.png"    alt="Logo-white">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="fa fa-bars"></span>

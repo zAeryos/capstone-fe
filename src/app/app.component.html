@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-breadcrumb *ngIf="isNotHomePage()"></app-breadcrumb>
 <app-loader *ngIf="loaderService.isLoading"></app-loader>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
