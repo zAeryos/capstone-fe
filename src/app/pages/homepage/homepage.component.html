@@ -14,7 +14,7 @@
                 <div class="carousel-caption">
                     <div class="p-3 c-width">
                         <h4 class="text-white text-uppercase fw-bold mb-4 spacing">Discover Your Next Adventure</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Embark on Unforgettable Journeys</h1>
+                        <h1 class="display-2 text-capitalize text-white mb-4"><strong>Embark on Unforgettable Journeys</strong></h1>
                         <p class="mb-5 fs-5">Experience the wonders of the world. Whether you're seeking cultural immersion, thrilling adventures, or serene getaways, we have the perfect tour for you.</p>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="carousel-caption">
                     <div class="p-3 c-width">
                         <h4 class="text-white text-uppercase fw-bold mb-4 spacing">Your Dream Vacation Awaits</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Create Timeless Memories</h1>
+                        <h1 class="display-2 text-capitalize text-white mb-4"><strong>Create Timeless Memories</strong></h1>
                         <p class="mb-5 fs-5">Indulge in the beauty of diverse landscapes, taste exotic cuisines, and connect with people from around the globe. Let Timeless Travels be your guide to extraordinary experiences.</p>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="carousel-caption">
                     <div class="p-3 c-width">
                         <h4 class="text-white text-uppercase fw-bold mb-4 spacing">Escape to New Horizons</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Unleash Your Wanderlust</h1>
+                        <h1 class="display-2 text-capitalize text-white mb-4"><strong>Unleash Your Wanderlust</strong></h1>
                         <p class="mb-5 fs-5">Leave the ordinary behind and embark on extraordinary adventures. From breathtaking natural wonders to ancient marvels, let us take you on a journey of a lifetime.</p>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-5">
                 <div class="h-100 img-bg">
-                    <img src="../../../assets/images/about-us-img.jpg" class="img-fluid w-100 h-100" alt="">
+                    <img src="../../../assets/images/logo/TIMELESS_TRAVELS_LOGO_1.png" class="img-fluid w-100 h-100" alt="">
                 </div>
             </div>
             <div class="col-lg-7 about-us-text-bg">
@@ -202,4 +202,47 @@
   </div>
 </section>
 
+<!-- ----------- PACKAGES ----------- -->
 
+<div class="container-fluid packages py-5">
+  <div class="container py-5">
+      <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+          <h5 class="section-title px-3">Packages</h5>
+          <h1 class="mb-0">Awesome Packages</h1>
+      </div>
+      <owl-carousel-o *ngIf="trips.length > 0" [options]="customOptions" #owlCarousel>
+        <ng-container *ngFor="let trip of trips">
+          <ng-template carouselSlide [id]="trip.trip_id.toString()">
+            <div class="packages-item">
+              <div class="packages-img">
+                  <img [src]="trip.destination.image" class="img-fluid w-100 rounded-top" alt="Image">
+                  <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute" style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                      <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>{{ trip.destination.name }}</small>
+                      <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{ trip.departureDate }}</small>
+                      <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>{{ trip.spotsLeft }}</small>
+                  </div>
+                  <div class="packages-price py-2 px-4">{{ trip.price }}</div>
+              </div>
+              <div class="packages-content bg-light">
+                  <div class="p-4 pb-0">
+                      <h5 class="mb-0">{{ trip.destination.name }}</h5>
+                      <div class="mb-3">
+                          <small *ngFor="let star of [1, 2, 3, 4, 5]" class="fa fa-star text-primary" [class.checked]="star <= trip.destination.avgRating"></small>
+                      </div>
+                      <p class="mb-4">{{ trip.destination.description }}</p>
+                  </div>
+                  <div class="row bg-primary rounded-bottom mx-0">
+                      <div class="col-6 text-start px-0">
+                          <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                      </div>
+                      <div class="col-6 text-end px-0">
+                          <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+  </div>
+</div>

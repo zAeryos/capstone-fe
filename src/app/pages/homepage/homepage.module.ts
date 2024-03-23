@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomepageComponent } from './homepage.component';
-import { BreadcrumbComponent } from '../../components/breadcrumb/breadcrumb.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -12,7 +14,8 @@ import { BreadcrumbComponent } from '../../components/breadcrumb/breadcrumb.comp
   ],
   imports: [
     CommonModule,
-    HomepageRoutingModule
+    HomepageRoutingModule,
+    CarouselModule
   ]
 })
 export class HomepageModule { }

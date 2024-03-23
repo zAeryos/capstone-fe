@@ -14,8 +14,10 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const navbar = this.elementRef.nativeElement.querySelector('.navbar');
-    if (window.pageYOffset > navbar.offsetTop) {
+    const navbarHeight = this.elementRef.nativeElement.querySelector('.navbar').offsetHeight;
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+    if (scrollPosition > navbarHeight + 55) {
       this.isSticky = true;
     } else {
       this.isSticky = false;
