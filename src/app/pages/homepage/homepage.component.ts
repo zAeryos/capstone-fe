@@ -19,16 +19,15 @@ export class HomepageComponent implements OnInit {
   constructor(private tripsService: TripsService) { }
 
   ngOnInit(): void {
+
     this.tripsService.getClosestDepartureTrips().subscribe(
       (response) => {
-        this.trips = response;
+        this.trips = (response as any).content;
       },
       (error) => {
         console.error('Error fetching trips:', error);
       }
     );
-
-    //TODO does not work, to fix
 
     this.customOptions = {
       autoplay: true,
@@ -57,7 +56,6 @@ export class HomepageComponent implements OnInit {
         }
       }
     }
-    console.log(this.trips)
   }
 }
 

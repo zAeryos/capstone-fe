@@ -13,6 +13,6 @@ export class TripsService {
   constructor(private http: HttpClient) { }
 
   getClosestDepartureTrips(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/api/trips/closest?pageSize=5`);
+    return this.http.get<any[]>(`${this.baseUrl}/api/trips/closest?pageSize=4`);
   }
 }
