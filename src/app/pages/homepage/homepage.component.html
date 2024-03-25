@@ -206,15 +206,15 @@
 <section id="packages-section">
   <div class="container-fluid packages py-5">
     <div class="container py-5">
-        <div class="mx-auto text-center mb-5 mw">
-            <h1 class="mb-0">Imminent Journeys</h1>
-        </div>
-        <owl-carousel-o [options]="customOptions" #owlCarousel>
-          <ng-container *ngFor="let trip of trips">
-            <ng-template carouselSlide [id]="trip.id">
+      <div class="mx-auto text-center mb-5 mw">
+          <h1 class="mb-0">Imminent Journeys</h1>
+      </div>
+      <owl-carousel-o [options]="customOptions" #owlCarousel>
+        <ng-container *ngFor="let trip of trips">
+          <ng-template carouselSlide [id]="trip.id">
               <div class="packages-item">
                 <div class="packages-img">
-                  <img [src]="trip.destination.image" class="img-fluid w-100 rounded-top" alt="Image">
+                  <a href=""><img [src]="trip.destination.image" class="img-fluid w-100 rounded-top" alt="Image"></a>
                   <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute section-b-img">
                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>{{ trip.destination.name }}</small>
                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{ trip.departureDate }}</small>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="packages-content bg-light">
                   <div class="p-4 pb-0">
-                    <h5 class="mb-0">{{ trip.destination.name }}</h5>
+                    <a href=""><h5 class="mb-0">{{ trip.destination.name }}</h5></a>
                     <div class="mb-3">
                       <small *ngFor="let star of [1, 2, 3, 4, 5]" class="fa fa-star text-primary" [class.checked]="star <= trip.destination.avgRating"></small>
                     </div>
@@ -240,26 +240,9 @@
                   </div>
                 </div>
               </div>
-            </ng-template>
-          </ng-container>
-        </owl-carousel-o>
-    </div>
-  </div>
-</section>
-
-<section id="newsletter-section">
-  <div class="container-fluid subscribe py-5">
-    <div class="container text-center py-5">
-      <div class="mx-auto text-center" style="max-width: 900px;">
-        <h5 class="subscribe-title px-3">Subscribe</h5>
-        <h1 class="text-white mb-4">Our Newsletter</h1>
-        <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
-        </p>
-        <div class="position-relative mx-auto">
-          <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-          <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Subscribe</button>
-        </div>
-      </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
     </div>
   </div>
 </section>

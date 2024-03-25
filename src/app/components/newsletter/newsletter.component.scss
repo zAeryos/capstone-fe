@@ -1,0 +1,38 @@
+/*** Newsletter ***/
+
+.subscribe {
+  background: linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../../../assets/images/newsletter-img.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.subscribe .subscribe-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: var(--bs-white);
+}
+
+.subscribe .subscribe-title::before {
+  content: "";
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: -50px;
+  border: 1px solid var(--bs-white) !important;
+}
+
+.subscribe .subscribe-title::after {
+  content: "";
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin-left: -50px;
+  border: 1px solid var(--bs-white) !important;
+}

@@ -10,6 +10,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NewsletterComponent } from './components/newsletter/newsletter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,14 +19,16 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     LoaderComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CarouselModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
