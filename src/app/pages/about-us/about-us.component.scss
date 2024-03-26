@@ -1,0 +1,108 @@
+/*** About Us ***/
+
+.img-bg {
+  border: 50px solid; border-color: transparent transparent #062431 transparent;
+}
+
+.about-us-text-bg {
+  background: linear-gradient(rgba(243, 243, 243, 0.8), rgba(255, 255, 255, .8))
+}
+
+.about .container .section-about-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: var(--bs-primary);
+}
+
+.about .container .section-about-title::before {
+  content: "";
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: -50px;
+  border: 1px solid var(--bs-primary);
+}
+
+/*** Travel Guide Start ***/
+.guide .guide-item .guide-img {
+  position: relative;
+}
+
+.guide .guide-item .guide-img .guide-icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: -50px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--bs-primary);
+  background: var(--bs-light);
+  z-index: 9;
+}
+
+.guide .guide-item .guide-img .guide-img-efects {
+  position: relative;
+  overflow: hidden;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.guide .guide-item .guide-img .guide-img-efects::after {
+  content: "";
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.guide .guide-item .guide-img-efects img {
+  transition: 0.5s;
+}
+.guide .guide-item:hover .guide-img-efects img {
+  transform: scale(1.1);
+}
+
+.guide .guide-item .guide-title {
+  position: relative;
+  background: var(--bs-light);
+  transition: 0.5s;
+}
+
+.guide .guide-item .guide-title::after {
+  content: "";
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: 0.5s;
+}
+
+.guide .guide-item:hover .guide-title::after {
+  height: 100%;
+  background: var(--bs-primary);
+  color: var(--bs-white);
+}
+
+.guide .guide-item .guide-title .guide-title-inner,
+.guide .guide-item:hover .guide-title .guide-title-inner h4 {
+  transition: 0.5s;
+}
+
+.guide .guide-item:hover .guide-title .guide-title-inner {
+  position: relative;
+  color: var(--bs-white);
+  z-index: 2;
+}
+
+.guide .guide-item:hover .guide-title .guide-title-inner h4 {
+  color: var(--bs-white);
+}

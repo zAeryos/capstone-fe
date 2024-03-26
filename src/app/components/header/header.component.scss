@@ -103,6 +103,10 @@
   color: var(--bs-white);
 }
 
+.dropdown a {
+  text-decoration: none;
+}
+
 .navbar .nav-item:hover .dropdown-menu {
   transform: rotateX(0deg);
   visibility: visible;

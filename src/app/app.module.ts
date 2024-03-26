@@ -12,6 +12,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { FormsModule } from '@angular/forms';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     LoaderComponent,
     BreadcrumbComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

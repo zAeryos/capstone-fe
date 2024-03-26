@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ITrip } from '../models/i-trips';
 
 @Injectable({
   providedIn: 'root'
@@ -15,4 +14,5 @@ export class TripsService {
   getClosestDepartureTrips(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/api/trips/closest?pageSize=5`);
   }
+
 }
