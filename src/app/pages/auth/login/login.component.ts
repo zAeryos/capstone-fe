@@ -9,13 +9,15 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  pageTitle: string    = 'Login';
-  userLogin: UserLogin = {
+
+  pageTitle   : string    = 'Login';
+  userLogin   : UserLogin = {
     username: '',
     password: ''
   }
 
-  logging = false;
+  logging     : boolean   = false;
+  isLoggedIn  : boolean   = false;
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -23,14 +25,20 @@ export class LoginComponent {
     this.logging = true;
     this.userService.login(this.userLogin)
       .subscribe(
-        (response) => {
+        (response:any) => {
           console.log('Login successful:', response);
+          localStorage.setItem('token', response.token);
+          this.userService.updateLoginStatus();
           setTimeout(() => {
             this.router.navigate(['homepage'])
+            this.isLoggedIn = true;
           }, 2000);
         },
         (error) => {
           console.error('Login error:', error);
+          setTimeout(() => {
+            this.logging = false;
+          }, 1000);
         }
       );
   }

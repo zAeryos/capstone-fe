@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { IUser } from '../models/i-user';
 import { UserLogin, UserRegister } from '../models/i-user-dto';
 import { IConfirmRes } from '../models/i-confirm-res';
@@ -9,6 +9,9 @@ import { IConfirmRes } from '../models/i-confirm-res';
   providedIn: 'root'
 })
 export class UserService {
+
+  private loggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public loggedIn$: Observable<boolean> = this.loggedInSubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -20,6 +23,15 @@ export class UserService {
 
   login(credentials: UserLogin): Observable<IConfirmRes> {
     return this.http.post<any>(`${this.baseUrl}/auth/login`, credentials);
+  }
+
+  public isLoggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token;
+  }
+
+  public updateLoginStatus(): void {
+    this.loggedInSubject.next(this.isLoggedIn());
   }
 
 }

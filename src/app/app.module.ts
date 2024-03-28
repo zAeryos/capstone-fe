@@ -14,6 +14,7 @@ import { NewsletterComponent } from './components/newsletter/newsletter.componen
 import { FormsModule } from '@angular/forms';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { PackagesComponent } from './pages/packages/packages.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     BreadcrumbComponent,
     NewsletterComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    PackagesComponent
   ],
   imports: [
     BrowserModule,

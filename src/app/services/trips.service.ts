@@ -11,8 +11,12 @@ export class TripsService {
 
   constructor(private http: HttpClient) { }
 
+  getClosestDepartureTripsLimited(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/api/trips/closest-limited?pageSize=5`);
+  }
+
   getClosestDepartureTrips(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/api/trips/closest?pageSize=5`);
+    return this.http.get<any[]>(`${this.baseUrl}/api/trips/closest`);
   }
 
 }

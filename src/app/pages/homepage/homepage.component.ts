@@ -20,7 +20,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.tripsService.getClosestDepartureTrips().subscribe(
+    this.tripsService.getClosestDepartureTripsLimited().subscribe(
       (response) => {
         this.trips = (response as any).content;
       },
