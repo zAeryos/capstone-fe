@@ -1,0 +1,44 @@
+<section id="packages-section">
+  <div class="container-fluid packages py-5">
+    <div class="container py-5">
+      <div class="mx-auto text-center mb-5 mw">
+          <h1 class="mb-0">Our available packages!</h1>
+          <p>Discover our curated selection of exciting travel packages and embark on unforgettable journeys around the globe. Whether you're dreaming of relaxing beach getaways, thrilling adventures in exotic destinations, or cultural explorations in historic cities, we have the perfect package for you. Start planning your next adventure with Timeless Travels!</p>
+      </div>
+      <div class="row">
+        <ng-container *ngFor="let trip of trips">
+          <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+            <div class="packages-item">
+              <div class="packages-img">
+                <a href=""><img [src]="trip.destination.image" class="img-fluid w-100 rounded-top" alt="Image"></a>
+                <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute section-b-img">
+                  <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>{{ trip.destination.name }}</small>
+                  <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{ trip.departureDate }}</small>
+                  <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>{{ trip.spotsLeft }}</small>
+                </div>
+                <div class="packages-price py-2 px-4">{{ trip.price }}€</div>
+              </div>
+              <div class="packages-content bg-light">
+                <div class="p-4 pb-0">
+                  <a href=""><h5 class="mb-0">{{ trip.destination.name }}</h5></a>
+                  <div class="mb-3">
+                    <small *ngFor="let star of [1, 2, 3, 4, 5]" class="fa fa-star text-primary" [class.checked]="star <= trip.destination.avgRating"></small>
+                  </div>
+                  <p class="mb-4">{{ trip.destination.description }}</p>
+                </div>
+                <div class="row bg-primary rounded-bottom mx-0">
+                  <div class="col-6 text-start px-0">
+                    <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
+                  </div>
+                  <div class="col-6 text-end px-0">
+                    <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>
