@@ -1,3 +1,9 @@
+# Epicode CAPSTONE
+
+In order to make the project fully work, you will need to use the back-end part of this project.
+To check it out, visit this link: https://github.com/zAeryos/capstone-be
+
+
 # CapstoneFe
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.

@@ -27,7 +27,7 @@ export class LoginComponent {
       .subscribe(
         (response:any) => {
           console.log('Login successful:', response);
-          localStorage.setItem('token', response.token);
+          localStorage.setItem('token', response.accessToken);
           this.userService.updateLoginStatus();
           setTimeout(() => {
             this.router.navigate(['homepage'])

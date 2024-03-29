@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-7 about-us-text-bg">
                 <h5 class="section-about-title pe-3">About Us</h5>
-                <h1 class="mb-4">Welcome to <span class="text-primary">Timeless Travels</span></h1>
+                <h2 class="mb-4">Welcome to <span class="text-primary">Timeless Travels</span></h2>
                 <p class="mb-4">At Timeless Travels, we specialize in crafting unforgettable journeys that transport you to new horizons and create timeless memories. Whether you're dreaming of exploring ancient wonders, relaxing on pristine beaches, or immersing yourself in vibrant cultures, we have the expertise to curate the perfect itinerary for you.</p>
                 <p class="mb-4">With our meticulous attention to detail, we take care of every aspect of your trip, from arranging first-class flights and handpicked accommodations to providing you with the latest model vehicles for seamless transportation. Our team of experienced travel professionals is dedicated to ensuring that every moment of your adventure is filled with joy, excitement, and discovery.</p>
                 <div class="row gy-2 gx-4 mb-4">
@@ -129,7 +129,7 @@
                         <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                             <div class="service-content text-end">
                                 <h5 class="mb-4">Travel Guides</h5>
-                                <p class="mb-0">Let our experienced travel guides enhance your journey with expert insights and local knowledge. Whether you're exploring historic landmarks or hidden gems, our guides ensure a memorable and enriching travel experience.</p>
+                                <p class="mb-0">Let our experienced travel guides enhance your journey with expert insights and local knowledge. Whether you're exploring historic landmarks or hidden gems, our guides ensure an enriching travel experience.</p>
                             </div>
                             <div class="service-icon p-4">
                                 <i class="fas fa-user-tie fa-4x text-primary"></i>
@@ -140,7 +140,7 @@
                         <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                             <div class="service-content text-end">
                                 <h5 class="mb-4">Event Management</h5>
-                                <p class="mb-0">From corporate retreats to destination weddings, trust our event management expertise to orchestrate seamless and unforgettable experiences. We handle every detail, allowing you to focus on enjoying your special occasion.</p>
+                                <p class="mb-0">Trust our event management expertise to create seamless and unforgettable experiences. We handle every detail, allowing you to focus on enjoying your special occasion.</p>
                             </div>
                             <div class="service-icon p-4">
                                 <i class="fas fa-cogs fa-4x text-primary"></i>
@@ -180,7 +180,7 @@
                             </div>
                             <div class="service-content">
                                 <h5 class="mb-4">Customized Itineraries</h5>
-                                <p class="mb-0">Personalize your travel experience with our customized itinerary planning services. Whether you're seeking adventure, relaxation, or cultural immersion, we tailor your itinerary to your interests and preferences for a truly unforgettable journey.</p>
+                                <p class="mb-0">Personalize your travel experience with our customized itinerary planning services. Whether you're seeking adventure, relaxation, or cultural immersion, we tailor your itinerary to your preferences for a truly unforgettable journey.</p>
                             </div>
                         </div>
                     </div>
@@ -223,7 +223,7 @@
                   <div class="packages-price py-2 px-4">{{ trip.price }}€</div>
                 </div>
                 <div class="packages-content bg-light">
-                  <div class="p-4 pb-0">
+                  <div class="p-4 pb-0 packages-content-inner">
                     <a href=""><h5 class="mb-0">{{ trip.destination.name }}</h5></a>
                     <div class="mb-3">
                       <small *ngFor="let star of [1, 2, 3, 4, 5]" class="fa fa-star text-primary" [class.checked]="star <= trip.destination.avgRating"></small>

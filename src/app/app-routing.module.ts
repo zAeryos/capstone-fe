@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { PackagesComponent } from './pages/packages/packages.component';
+import { TripComponent } from './pages/trip/trip.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path        : 'packages',
     component   : PackagesComponent
+  },
+  {
+    path        : 'packages/trip/:id',
+    component   : TripComponent
   },
   {
     path: 'auth',
