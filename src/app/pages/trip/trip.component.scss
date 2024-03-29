@@ -1,4 +1,50 @@
+/*** Booking ***/
+.booking {
+  background: linear-gradient(rgb(6, 36, 49), rgb(130, 169, 180));
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+.booking .info {
+  font-size: 0.8rem;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.booking .container .section-booking-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: var(--bs-white);
+}
+
+.booking .container .section-booking-title::before {
+  content: "";
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: -50px;
+  border: 1px solid var(--bs-white) !important;
+}
+
+.booking .container form .btn.btn-primary {
+  box-shadow: inset 0 0 0 0 var(--bs-primary);
+}
+
+.booking .container form .btn.btn-primary:hover {
+  box-shadow: inset 800px 0 0 0 var(--bs-light) !important;
+  color: var(--bs-primary) !important;
+}
+
 /*** Packages ***/
+
 #packages-section {
   background-color: #ebeced;
 }

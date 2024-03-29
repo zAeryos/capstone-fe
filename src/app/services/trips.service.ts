@@ -19,4 +19,8 @@ export class TripsService {
     return this.http.get<any[]>(`${this.baseUrl}/api/trips/closest`);
   }
 
+  getTripById(id : number): Observable<any> {
+    return this.http.get<any[]>(`${this.baseUrl}/api/trips/id?id=${id}`)
+  }
+
 }

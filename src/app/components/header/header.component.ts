@@ -49,5 +49,4 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('homepage');
     this.checkLoginStatus();
   }
-
 }
