@@ -106,6 +106,10 @@
   color: var(--bs-primary);
 }
 
+.about-us-text-bg h2 span {
+  font-size: 1.2em;
+}
+
 .about .container .section-about-title::before {
   content: "";
   width: 50px;
@@ -121,6 +125,7 @@
 
 .service .service-content-inner {
   transition: 0.5s;
+  height: 220px;
 }
 
 .service-mw {
@@ -131,6 +136,20 @@
   position: relative;
   background: var(--bs-primary)!important;
 }
+
+/* Make icon stay on top */
+
+.service .service-content-inner .service-icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.service .service-content-inner .service-icon i {
+  margin-top: -95px;
+}
+
+//
 
 .service .service-content-inner .service-content h5,
 .service .service-content-inner .service-content p,
@@ -173,6 +192,9 @@
   transition: 0.5s;
 }
 
+.packages-item .packages-img a img {
+  height: 380px;
+}
 
 .packages .packages-item .packages-img small,
 .packages .packages-item .packages-img small i {
@@ -231,6 +253,10 @@
   bottom: 0;
   left: 0;
   z-index: 5;
+}
+
+.packages-item .packages-content-inner p {
+  height: 125px;
 }
 
 .packages .packages-carousel {

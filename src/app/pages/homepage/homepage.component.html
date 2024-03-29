@@ -63,7 +63,7 @@
             </div>
             <div class="col-lg-7 about-us-text-bg">
                 <h5 class="section-about-title pe-3">About Us</h5>
-                <h1 class="mb-4">Welcome to <span class="text-primary">Timeless Travels</span></h1>
+                <h2 class="mb-4">Welcome to <span class="text-primary">Timeless Travels</span></h2>
                 <p class="mb-4">At Timeless Travels, we specialize in crafting unforgettable journeys that transport you to new horizons and create timeless memories. Whether you're dreaming of exploring ancient wonders, relaxing on pristine beaches, or immersing yourself in vibrant cultures, we have the expertise to curate the perfect itinerary for you.</p>
                 <p class="mb-4">With our meticulous attention to detail, we take care of every aspect of your trip, from arranging first-class flights and handpicked accommodations to providing you with the latest model vehicles for seamless transportation. Our team of experienced travel professionals is dedicated to ensuring that every moment of your adventure is filled with joy, excitement, and discovery.</p>
                 <div class="row gy-2 gx-4 mb-4">
@@ -223,7 +223,7 @@
                   <div class="packages-price py-2 px-4">{{ trip.price }}€</div>
                 </div>
                 <div class="packages-content bg-light">
-                  <div class="p-4 pb-0">
+                  <div class="p-4 pb-0 packages-content-inner">
                     <a href=""><h5 class="mb-0">{{ trip.destination.name }}</h5></a>
                     <div class="mb-3">
                       <small *ngFor="let star of [1, 2, 3, 4, 5]" class="fa fa-star text-primary" [class.checked]="star <= trip.destination.avgRating"></small>

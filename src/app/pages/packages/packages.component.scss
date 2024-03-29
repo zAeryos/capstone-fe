@@ -2,7 +2,7 @@
   background-color: #ebeced;
 }
 
-.packages .packages-item .packages-img {
+.packages-item .packages-img {
   position: relative;
   overflow: hidden;
   transition: 0.5s;
@@ -11,45 +11,49 @@
   z-index: 1;
 }
 
-.packages .packages-item a {
+.packages-item .packages-img a img {
+  height: 380px;
+}
+
+.packages-item a {
   text-decoration: none;
 }
 
-.packages .packages-item .packages-img .packages-info {
+.packages-item .packages-img .packages-info {
   background: rgba(0, 0, 0, .3);
 }
 
-.packages .packages-item .packages-img .packages-info small,
-.packages .packages-item .packages-img .packages-info small i {
+.packages-item .packages-img .packages-info small,
+.packages-item .packages-img .packages-info small i {
   color: var(--bs-white);
   transition: 0.5s;
 }
 
 
-.packages .packages-item .packages-img small,
-.packages .packages-item .packages-img small i {
+.packages-item .packages-img small,
+.packages-item .packages-img small i {
   transition: 0.5s;
 }
 
-.packages .packages-item .packages-img:hover small,
-.packages .packages-item .packages-img:hover small i {
+.packages-item .packages-img:hover small,
+.packages-item .packages-img:hover small i {
   color: var(--bs-white) !important;
 
 }
 
-.packages .packages-item .packages-img a {
+.packages-item .packages-img a {
   display: block;
 }
 
-.packages .packages-item .packages-img img {
+.packages-item .packages-img img {
   transition: 0.5s;
 }
 
-.packages .packages-item .packages-img:hover img {
+.packages-item .packages-img:hover img {
   transform: scale(1.3);
 }
 
-.packages .packages-item .packages-img .packages-price {
+.packages-item .packages-img .packages-price {
   position: absolute;
   width: 100px;
   top: 0;
@@ -63,7 +67,7 @@
   z-index: 5;
 }
 
-.packages .packages-item .packages-img::after {
+.packages-item .packages-img::after {
   position: absolute;
   content: "";
   width: 0;
@@ -83,4 +87,14 @@
   bottom: 0;
   left: 0;
   z-index: 5;
+}
+
+.packages-item .packages-content-inner p {
+  height: 125px;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .packages-item .packages-content-inner p {
+    height: 155px;
+  }
 }
