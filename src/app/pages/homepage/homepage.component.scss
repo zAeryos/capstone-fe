@@ -163,6 +163,24 @@
   color: var(--bs-white)!important;
 }
 
+@media (min-width: 992px) and (max-width: 1200px) {
+  .service .service-content-inner {
+    height: 260px;
+  }
+}
+
+@media (max-width: 537px) {
+  .service .service-content-inner {
+    height: auto;
+  }
+
+  .service .service-content-inner .service-icon i {
+    margin-top: -125px;
+  }
+
+}
+
+
 /*** Packages ***/
 
 #packages-section {
