@@ -62,7 +62,7 @@
                 </div>
             </div>
             <div class="col-lg-7 about-us-text-bg">
-                <h5 class="section-about-title pe-3">About Us</h5>
+                <h5 class="section-about-title py-3">About Us</h5>
                 <h2 class="mb-4">Welcome to <span class="text-primary">Timeless Travels</span></h2>
                 <p class="mb-4">At Timeless Travels, we specialize in crafting unforgettable journeys that transport you to new horizons and create timeless memories. Whether you're dreaming of exploring ancient wonders, relaxing on pristine beaches, or immersing yourself in vibrant cultures, we have the expertise to curate the perfect itinerary for you.</p>
                 <p class="mb-4">With our meticulous attention to detail, we take care of every aspect of your trip, from arranging first-class flights and handpicked accommodations to providing you with the latest model vehicles for seamless transportation. Our team of experienced travel professionals is dedicated to ensuring that every moment of your adventure is filled with joy, excitement, and discovery.</p>
@@ -93,7 +93,6 @@
 </section>
 
 <!-- ----------- SERVICES ----------- -->
-
 <section id="services-section">
   <div class="container-fluid bg-light service py-5">
     <div class="container py-5">
@@ -214,7 +213,7 @@
           <ng-template carouselSlide [id]="trip.id">
               <div class="packages-item">
                 <div class="packages-img">
-                  <a href=""><img [src]="trip.destination.image" class="img-fluid w-100 rounded-top" alt="Image"></a>
+                  <a [routerLink]="['../packages/trip/', trip.trip_id]"><img [src]="trip.destination.image" class="img-fluid w-100 rounded-top" alt="Image"></a>
                   <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute section-b-img">
                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt me-2"></i>{{ trip.destination.name }}</small>
                     <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt me-2"></i>{{ trip.departureDate }}</small>
