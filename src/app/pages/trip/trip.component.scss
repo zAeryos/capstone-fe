@@ -75,6 +75,11 @@
   color: var(--bs-primary) !important;
 }
 
+.form-blur-effect {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
 /*** Packages ***/
 
 #packages-section {

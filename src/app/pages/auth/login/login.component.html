@@ -7,19 +7,13 @@
           <form (ngSubmit)="loginUser()">
             <div class="row g-3 mb-4">
               <div class="form-floating">
-                <input type="text" class="form-control bg-white border-0" id="username" name="username" placeholder="" value="" required [(ngModel)]="userLogin.username">
+                <input type="text" class="form-control bg-white" id="username" name="username" placeholder="" value="" required [(ngModel)]="userLogin.username">
                 <label for="username" class="ms-1">Username</label>
               </div>
               <div class="form-floating">
-                <input type="password" class="form-control bg-white border-0" id="password" name="password" placeholder="" value="" required [(ngModel)]="userLogin.password">
+                <input type="password" class="form-control bg-white" id="password" name="password" placeholder="" value="" required [(ngModel)]="userLogin.password">
                 <label for="password" class="ms-1">Password</label>
               </div>
-            </div>
-            <div class="alert alert-success" *ngIf="loginSuccess" role="alert">
-              Login successful! Redirecting...
-            </div>
-            <div class="alert alert-danger" *ngIf="loginError" role="alert">
-              {{ loginErrorMessage }}
             </div>
             <div class="d-grid gap-2">
               <button type="submit" class="btn btn-primary btn-block login-btn">
