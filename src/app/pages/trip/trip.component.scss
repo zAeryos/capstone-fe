@@ -1,3 +1,35 @@
+/*** Trip Details ***/
+
+.trip-details {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.trip-details-bg {
+  background-color: #f8f8f9;
+}
+
+.trip-details h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.trip-details .row {
+  margin-bottom: 20px;
+}
+
+.trip-details .fw-bold {
+  font-weight: bold;
+}
+
+.trip-details p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 /*** Booking ***/
 .booking {
   background: linear-gradient(rgb(6, 36, 49), rgb(130, 169, 180));

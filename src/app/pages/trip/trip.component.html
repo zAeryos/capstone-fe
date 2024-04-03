@@ -1,13 +1,55 @@
 <!-- ----------- TRIP DETAILS ----------- -->
 
-<p>Name: {{trip.destination.name}}</p>
-<p>Desc: {{trip.destination.longDescription}}</p>
-<p>Departure: {{trip.departureDate}}</p>
-<p>Returning: {{trip.returningDate}}</p>
-<p>Price: {{trip.price}}</p>
-<p>Spots left: {{trip.spotsLeft}}</p>
+<section id="trip-details-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="trip-details trip-details-bg m-5 rounded">
+          <img [src]="trip.destination.image" class="img-fluid mb-3" alt="Trip Image">
+          <h2 class="text-center mb-4">Trip Details</h2>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <p class="fw-bold">Destination:</p>
+              <p>{{ trip.destination.name }}</p>
+            </div>
+            <div class="col-md-6">
+              <p class="fw-bold">Price:</p>
+              <p>${{ trip.price }}</p>
+            </div>
+            <div class="col-md-6">
+              <p class="fw-bold">Departure Date:</p>
+              <p>{{trip.departureDate}}</p>
+            </div>
+            <div class="col-md-6">
+              <p class="fw-bold">Returning Date:</p>
+              <p>{{trip.returningDate}}</p>
+            </div>
+            <div class="col-md-6">
+              <p class="fw-bold">Duration:</p>
+              <p>{{durationDays}} days</p>
+            </div>
+            <div class="col-md-6">
+              <p class="fw-bold">Spots Left:</p>
+              <p>{{ trip.spotsLeft }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="fw-bold mb-3">Description</h3>
+              <p class="px-5">{{ trip.destination.longDescription }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--
 <p>Max Participants: {{trip.maxParticipants}}</p>
 <p>Rating: {{trip.avgRating}}</p>
+-->
 
 <!-- ----------- TRIP BOOKING ----------- -->
 <section id="booking-section">
@@ -17,8 +59,8 @@
         <div class="col-lg-6">
           <h5 class="section-booking-title pe-3">Booking</h5>
           <h1 class="text-white mb-4">Online Booking</h1>
-          <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat doloribus quasi quo iure officia.</p>
-          <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat doloribus quasi quo iure officia.</p>
+          <p class="text-white mb-4">Ready for your next adventure? Start your journey with Timeless Travels! Explore breathtaking landscapes, experience thrilling activities, and create unforgettable memories with our expertly crafted tours.</p>
+          <p class="text-white mb-4">Whether you're a solo traveler, a couple, or a group of friends, we have the perfect trip for you. Discover hidden gems, immerse yourself in local culture, and embark on the adventure of a lifetime.</p>
         </div>
         <div class="col-lg-6">
           <h1 class="text-white mb-3">Book This Trip Now!</h1>
@@ -77,6 +119,7 @@
   </div>
 </section>
 
+<!-- ----------- OTHER TRIPS ----------- -->
 <section id="packages-section">
   <div class="container-fluid packages py-5">
     <div class="container py-5">
