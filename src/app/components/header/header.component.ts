@@ -1,6 +1,8 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { ToastrService } from 'ngx-toastr';
+import { IUser } from '../../models/i-user';
 
 @Component({
   selector: 'app-header',
@@ -15,8 +17,11 @@ export class HeaderComponent implements OnInit {
   constructor (
     private elementRef  : ElementRef,
     private router      : Router,
-    private userSvc     : UserService
-    ) {}
+    private userSvc     : UserService,
+    private toastr      : ToastrService
+    ) {
+
+    }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -31,6 +36,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoggedIn = this.userSvc.isLoggedIn();
+    console.log(this.isLoggedIn);
     this.userSvc.loggedIn$.subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;
     });
@@ -45,8 +52,8 @@ export class HeaderComponent implements OnInit {
 
   logout(): void {
     localStorage.removeItem('token');
-    this.isLoggedIn = false;
     this.router.navigateByUrl('homepage');
     this.checkLoginStatus();
+    this.toastr.info('You have been logged out!');
   }
 }

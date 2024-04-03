@@ -6,7 +6,7 @@
       <div class="col-lg-8 mx-auto">
         <div class="trip-details trip-details-bg m-5 rounded">
           <img [src]="trip.destination.image" class="img-fluid mb-3" alt="Trip Image">
-          <h2 class="text-center mb-4">Trip Details</h2>
+          <h2 class="text-center mb-5 mt-4">Trip Details</h2>
           <div class="row mb-3">
             <div class="col-md-6">
               <p class="fw-bold">Destination:</p>
@@ -35,7 +35,7 @@
           </div>
           <div class="row">
             <div class="col-md-12">
-              <h3 class="fw-bold mb-3">Description</h3>
+              <h3 class="fw-bold mb-4 mt-5">Description</h3>
               <p class="px-5">{{ trip.destination.longDescription }}</p>
             </div>
           </div>
@@ -66,7 +66,7 @@
           <h1 class="text-white mb-3">Book This Trip Now!</h1>
           <p class="text-white mb-1">Get <span class="text-warning">10% Off</span> On Your First Adventure Trip With Timeless Travels.</p>
           <p class="text-white mb-4 info">*If you wish to book a private tour, feel free to contact us <a routerLink="../../../contact-us" class="text-warning">here</a></p>
-          <form (ngSubmit)="onSubmit()">
+          <form (ngSubmit)="onSubmit()" [ngClass]="{ 'form-blur-effect': !isLoggedIn }">
             <div class="row g-3">
               <div class="col-md-6">
                 <div class="form-floating">
@@ -113,6 +113,7 @@
               </div>
             </div>
           </form>
+          <p class="text-white text-center mb-4 mt-4" *ngIf="!isLoggedIn">To book this trip, please <a routerLink="/auth/login" class="text-warning">login</a> or <a routerLink="/auth/register" class="text-warning">register</a> first.</p>
         </div>
       </div>
     </div>

@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { TripsService } from '../../services/trips.service';
 import { BookingService } from '../../services/booking.service';
 import { ITrip } from '../../models/i-trips';
+import { UserService } from '../../services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-trip',
@@ -11,6 +13,7 @@ import { ITrip } from '../../models/i-trips';
 })
 export class TripComponent implements OnInit {
 
+  isLoggedIn    : boolean = false;
   trip          : any;
   durationDays  : number  = 0;
   trips         : any[]   = [];
@@ -25,12 +28,16 @@ export class TripComponent implements OnInit {
   constructor(
     private tripSvc    : TripsService,
     private bookingSvc : BookingService,
-    private route      : ActivatedRoute
+    private userSvc    : UserService,
+    private route      : ActivatedRoute,
+    private toastr     : ToastrService
     ) {
       this.userToken = localStorage.getItem('token');
     }
 
   ngOnInit() {
+    this.isLoggedIn = this.userSvc.isLoggedIn();
+
     this.route.params.subscribe((params: any) => {
       this.tripSvc.getTripById(params.id).subscribe(res => {
         this.trip = res;
@@ -53,17 +60,19 @@ export class TripComponent implements OnInit {
 
   onSubmit() {
     if (this.userToken) {
-      console.log(this.formData)
       if (this.formData.partNumber) {
         this.bookingSvc.createBooking(this.userToken, this.trip.trip_id, this.formData.partNumber).subscribe(
           (response) => {
             console.log('Booking created Successfully:', response)
+            this.toastr.success('We will send you an email shortly will all the details.','Booked successfully!');
         },
         (error) => {
           console.error('Error creating booking:', error);
+          this.toastr.error('It seems the was an error with the booking.','Oops!');
         })
       } else {
         console.error('Participants number not found')
+        this.toastr.warning('Choose the amount of participants', 'Oops!')
       }
     } else {
       console.error('User token was not found')

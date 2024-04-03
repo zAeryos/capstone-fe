@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserLogin } from '../../../models/i-user-dto';
 import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +18,13 @@ export class LoginComponent {
   }
   logging           : boolean   = false;
   isLoggedIn        : boolean   = false;
-  loginSuccess      : boolean   = false;
-  loginError        : boolean   = false;
-  loginErrorMessage : string    = '';
 
-  constructor(private userService: UserService, private router: Router) {}
+
+  constructor(
+    private userService : UserService,
+    private router      : Router,
+    private toastr      : ToastrService
+    ) {}
 
   loginUser() {
     this.logging = true;
@@ -31,7 +34,7 @@ export class LoginComponent {
           console.log('Login successful:', response);
           localStorage.setItem('token', response.accessToken);
           this.userService.updateLoginStatus();
-          this.loginSuccess = true;
+          this.toastr.success('Redirecting...', 'Login successful!')
           setTimeout(() => {
             this.router.navigate(['homepage'])
             this.isLoggedIn = true;
@@ -39,12 +42,7 @@ export class LoginComponent {
         },
         (error) => {
           console.error('Login error:', error);
-          this.loginError = true;
-          this.loginErrorMessage = 'Username or password are incorrect.'
-          setTimeout(() => {
-            this.logging    = false;
-            this.loginError = false;
-          }, 2000);
+          this.toastr.error('Username or password are incorrect.', 'Oops!')
         }
       );
   }
