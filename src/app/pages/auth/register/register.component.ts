@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { UserRegister } from '../../../models/i-user-dto';
 import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -20,11 +21,13 @@ export class RegisterComponent {
   };
 
   registering               : boolean = false;
-  registrationSuccess       : boolean = false;
-  registrationError         : boolean = false;
-  registrationErrorMessage  : string  = '';
 
-  constructor(private userService: UserService, private router: Router) {}
+
+  constructor(
+    private userService : UserService,
+    private router      : Router,
+    private toastr      : ToastrService
+    ) {}
 
   registerUser() {
     this.registering = true;
@@ -32,7 +35,7 @@ export class RegisterComponent {
       .subscribe(
         (response) => {
           console.log('Registration successful:', response);
-          this.registrationSuccess  = true;
+          this.toastr.success('You will be redirected to the login page..', 'Registration successful!')
           this.registering          = false;
           setTimeout(() => {
             this.router.navigate(['auth/login'])
@@ -41,11 +44,7 @@ export class RegisterComponent {
         (error) => {
           console.error('Registration error:', error);
           this.registering              = false;
-          this.registrationError        = true;
-          this.registrationErrorMessage = 'Registration failed, please try again.'
-          setTimeout(() => {
-            this.registrationError = false;
-          }, 3000);
+          this.toastr.error('Please try again.', 'Registration failed')
         }
       );
   }

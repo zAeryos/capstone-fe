@@ -25,6 +25,10 @@ export class UserService {
     return this.http.post<any>(`${this.baseUrl}/auth/login`, credentials);
   }
 
+  getUser():Observable<IUser> {
+    return this.http.get<any>(`${this.baseUrl}/api/users`);
+  }
+
   public isLoggedIn(): boolean {
     const token = localStorage.getItem('token');
     return !!token;
