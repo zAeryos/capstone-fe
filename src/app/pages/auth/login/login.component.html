@@ -15,6 +15,12 @@
                 <label for="password" class="ms-1">Password</label>
               </div>
             </div>
+            <div class="alert alert-success" *ngIf="loginSuccess" role="alert">
+              Login successful! Redirecting...
+            </div>
+            <div class="alert alert-danger" *ngIf="loginError" role="alert">
+              {{ loginErrorMessage }}
+            </div>
             <div class="d-grid gap-2">
               <button type="submit" class="btn btn-primary btn-block login-btn">
                 Login
