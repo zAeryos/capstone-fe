@@ -1,45 +1,71 @@
 <div class="container">
+  <div class="registration-container">
+    <div class="registration-box">
+      <main>
+        <div class="container">
+          <h1 class="text-center mb-1">Register</h1>
+          <p class="text-center mb-5">Have an account already?
+            <a class="login-link" routerLink="../login" routerLinkActive="active">Login instead!</a>
+          </p>
+          <form (ngSubmit)="registerUser()">
+            <div class="row g-3 mb-4">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-white border-0 ms-1" id="name" name="name" placeholder="" value="" required [(ngModel)]="userRegister.name">
+                  <label for="name" class="ms-1">Name*</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-white border-0 ms-1" id="surname" name="surname" placeholder="" value="" required [(ngModel)]="userRegister.surname">
+                  <label for="surname" class="ms-1">Surname*</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control bg-white border-0 ms-1" id="username" name="username" placeholder="" value="" required [(ngModel)]="userRegister.username">
+                  <label for="username" class="ms-1">Username*</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="password" class="form-control bg-white border-0 ms-1" id="password" name="password" placeholder="" value="" required [(ngModel)]="userRegister.password">
+                  <label for="password" class="ms-1">Password*</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <input type="email" class="form-control bg-white border-0 ms-1" id="email" name="email" placeholder="" value="" required [(ngModel)]="userRegister.email">
+                  <label for="email" class="ms-1">Email address*</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="date" class="form-control bg-white border-0 ms-1" id="birthday" name="birthday" placeholder="" value="" required [(ngModel)]="userRegister.birthday">
+                  <label for="birthday" class="ms-1">Birthday*</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control bg-white border-0 ms-1" id="phoneNumber" name="phoneNumber" placeholder="" value="" required [(ngModel)]="userRegister.phoneNumber">
+                  <label for="phoneNumber" class="ms-1">Phone number*</label>
+                </div>
+              </div>
+            </div>
+            <div class="alert alert-success" *ngIf="registrationSuccess" role="alert">
+              Registration successful! You will be redirected to the login page..
+            </div>
 
-
-  <div class="registration-container margin">
-  <div class="registration-box">
-    <main>
-      <div class="container">
-        <h1 class="text-center">Register</h1>
-        <p class="text-center">Have an account already? <a class="nav-link"  routerLink="../login" routerLinkActive="active">Login instead!</a></p>
-        <form (ngSubmit)="registerUser()">
-          <div class="form-group" class="text-center">
-
-            <label for="name" class="mt-3">Name*</label>
-            <input type="text" id="name" class="form-control" name="name" required [(ngModel)]="userRegister.name" >
-
-            <label for="surname" class="mt-3">Surname*</label>
-            <input type="text" id="surname" class="form-control" name="surname" required [(ngModel)]="userRegister.surname">
-
-            <label for="username" class="mt-3">Username*</label>
-            <input type="text" id="username" class="form-control" name="username" required [(ngModel)]="userRegister.username">
-
-            <label for="email" class="mt-3">Email address*</label>
-            <input type="email" id="email" class="form-control" name="email" required [(ngModel)]="userRegister.email">
-
-            <label for="password" class="mt-3">Password*</label>
-            <input type="password" id="password" name="password" class="form-control" required [(ngModel)]="userRegister.password">
-
-            <label for="phoneNumber" class="mt-3">Phone number*</label>
-            <input type="number" id="phoneNumber" class="form-control" name="phoneNumber" required [(ngModel)]="userRegister.phoneNumber">
-
-            <label for="birthday" class="mt-3">Birthday*</label>
-            <input type="date" id="birthday" class="form-control text-center" name="birthday" required [(ngModel)]="userRegister.birthday">
-
-          </div>
-          <div class="text-center">
-             <button type="submit" class="text-center btn btn-primary my-5">Register now</button>
-             <span *ngIf="registering" class="spinner-border spinner-border-sm" role="status"></span>
-          </div>
-        </form>
-      </div>
-    </main>
+            <div class="alert alert-danger" *ngIf="registrationError" role="alert">
+              {{ registrationErrorMessage }}
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary my-5">Register now</button>
+              <span *ngIf="registering" class="spinner-border spinner-border-sm" role="status"></span>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
   </div>
 </div>
-
-      </div>

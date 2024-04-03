@@ -1,7 +1,28 @@
-# Epicode CAPSTONE
+# IT Epicode CAPSTONE
 
-In order to make the project fully work, you will need to use the back-end part of this project.
-To check it out, visit this link: https://github.com/zAeryos/capstone-be
+🌍 Timeless Travels è un'innovativa piattaforma di viaggi che ti offre l'opportunità di esplorare il mondo attraverso incredibili avventure, tutto comodamente organizzato per te. 🧳
+
+📆 Scopri viaggi straordinari, con pacchetti per destinazioni mozzafiato, date flessibili e esperienze indimenticabili, progettate su misura per soddisfare i tuoi desideri di esplorazione. ✈️
+
+🌟 Da antiche rovine alle città moderne, dai paesaggi naturali incontaminati alle metropoli vivaci, Timeless Travels ti guida attraverso un viaggio senza tempo, trasformando i tuoi sogni in realtà. 🚀
+
+🎉 Benvenuto in Timeless Travels, dove ogni viaggio è una storia da raccontare. 🎉
+
+🔧 Per rendere il progetto completamente funzionante, è necessario utilizzare la parte back-end di questo progetto.
+Per visualizzarlo, visita questo link: https://github.com/zAeryos/capstone-be 🔙
+
+# EN Epicode CAPSTONE
+
+🌍 Timeless Travels is an innovative travel platform that offers you the opportunity to explore the world through incredible adventures, all conveniently organized for you. 🧳
+
+📆 Discover extraordinary journeys, with packages to breathtaking destinations, flexible dates, and unforgettable experiences, tailor-made to satisfy your exploration desires. ✈️
+
+🌟 From ancient ruins to modern cities, from pristine natural landscapes to vibrant metropolises, Timeless Travels guides you through a timeless journey, turning your dreams into reality. 🚀
+
+🎉 Welcome to Timeless Travels, where every journey is a story to be told. 🎉
+
+🔧 In order to make the project fully work, you will need to use the back-end part of this project.
+To check it out, visit this link: https://github.com/zAeryos/capstone-be 🔙
 
 
 # CapstoneFe

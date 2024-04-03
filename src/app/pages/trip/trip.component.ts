@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TripsService } from '../../services/trips.service';
 import { BookingService } from '../../services/booking.service';
+import { ITrip } from '../../models/i-trips';
 
 @Component({
   selector: 'app-trip',
@@ -10,14 +11,16 @@ import { BookingService } from '../../services/booking.service';
 })
 export class TripComponent implements OnInit {
 
-  trip        : any;
-  trips       : any[]   = []
-  userToken   : string | null  = ''
-  formData    : any     = {
-    fullName  : '',
-    email     : '',
-    partNumber: 0,
+  trip          : any;
+  durationDays  : number  = 0;
+  trips         : any[]   = [];
+  userToken     : string | null  = '';
+  formData      : any     = {
+    fullName    : '',
+    email       : '',
+    partNumber  : 0,
   }
+
 
   constructor(
     private tripSvc    : TripsService,
@@ -25,13 +28,13 @@ export class TripComponent implements OnInit {
     private route      : ActivatedRoute
     ) {
       this.userToken = localStorage.getItem('token');
-      console.log(this.userToken)
     }
 
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
       this.tripSvc.getTripById(params.id).subscribe(res => {
         this.trip = res;
+        this.calcDurationDays();
         console.log(res)
       })
     })
@@ -82,6 +85,17 @@ export class TripComponent implements OnInit {
     }
 
     return array;
+  }
+
+  calcDurationDays() {
+
+    const departureDate = new Date(this.trip.departureDate);
+    const returningDate = new Date(this.trip.returningDate);
+
+    const differenceMs  = returningDate.getTime() - departureDate.getTime();
+
+    this.durationDays   = differenceMs / (1000 * 60 * 60 * 24);
+
   }
 
 }

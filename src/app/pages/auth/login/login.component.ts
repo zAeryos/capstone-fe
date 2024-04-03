@@ -10,14 +10,16 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  pageTitle   : string    = 'Login';
-  userLogin   : UserLogin = {
+  pageTitle         : string    = 'Login';
+  userLogin         : UserLogin = {
     username: '',
     password: ''
   }
-
-  logging     : boolean   = false;
-  isLoggedIn  : boolean   = false;
+  logging           : boolean   = false;
+  isLoggedIn        : boolean   = false;
+  loginSuccess      : boolean   = false;
+  loginError        : boolean   = false;
+  loginErrorMessage : string    = '';
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -29,16 +31,20 @@ export class LoginComponent {
           console.log('Login successful:', response);
           localStorage.setItem('token', response.accessToken);
           this.userService.updateLoginStatus();
+          this.loginSuccess = true;
           setTimeout(() => {
             this.router.navigate(['homepage'])
             this.isLoggedIn = true;
-          }, 2000);
+          }, 2500);
         },
         (error) => {
           console.error('Login error:', error);
+          this.loginError = true;
+          this.loginErrorMessage = 'Username or password are incorrect.'
           setTimeout(() => {
-            this.logging = false;
-          }, 1000);
+            this.logging    = false;
+            this.loginError = false;
+          }, 2000);
         }
       );
   }

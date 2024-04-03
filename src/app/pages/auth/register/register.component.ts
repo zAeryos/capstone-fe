@@ -19,7 +19,10 @@ export class RegisterComponent {
     email: ''
   };
 
-  registering = false;
+  registering               : boolean = false;
+  registrationSuccess       : boolean = false;
+  registrationError         : boolean = false;
+  registrationErrorMessage  : string  = '';
 
   constructor(private userService: UserService, private router: Router) {}
 
@@ -29,14 +32,20 @@ export class RegisterComponent {
       .subscribe(
         (response) => {
           console.log('Registration successful:', response);
-          this.registering = false;
+          this.registrationSuccess  = true;
+          this.registering          = false;
           setTimeout(() => {
             this.router.navigate(['auth/login'])
-          }, 2000);
+          }, 2500);
         },
         (error) => {
           console.error('Registration error:', error);
-          this.registering = false;
+          this.registering              = false;
+          this.registrationError        = true;
+          this.registrationErrorMessage = 'Registration failed, please try again.'
+          setTimeout(() => {
+            this.registrationError = false;
+          }, 3000);
         }
       );
   }
